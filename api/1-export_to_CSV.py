@@ -24,7 +24,7 @@ if __name__ == "__main__":
     file = open("{}.csv".format(user["id"]), "w")
 
     for i, j in enumerate(tasks):
-        tasks_file.write("\"{}\",\"{}\","
+        file.write("\"{}\",\"{}\","
                          "\"{}\",\"{}\"\n".format(user["id"],
                                                   user["username"],
                                                   j["completed"],
