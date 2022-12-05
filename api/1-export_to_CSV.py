@@ -23,10 +23,10 @@ if __name__ == "__main__":
 
     file = open("{}.csv".format(user["id"]), "w")
 
-    for i, j in enumerate(tasks):
-        print("\"{}\",\"{}\","
-              "\"{}\",\"{}\"\n".format(user["id"],
-                                       user["username"],
-                                       j["completed"],
-                                       j["title"]))
+    for task in tasks:
+        file.write("\"{}\",\"{}\","
+                   "\"{}\",\"{}\"\n".format(user["id"],
+                                            user["username"],
+                                            task["completed"],
+                                            task["title"]))
     file.close()
