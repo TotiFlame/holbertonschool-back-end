@@ -33,3 +33,5 @@ if __name__ == "__main__":
                           "username": user["username"]})
 
     file.write(json.dumps(userj))
+
+    file.close()
