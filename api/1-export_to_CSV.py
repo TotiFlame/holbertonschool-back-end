@@ -22,11 +22,11 @@ if __name__ == "__main__":
     tasks = json.loads(response.decode("utf-8"))
 
     file = open("{}.csv".format(user["id"]), "w")
-    
+
     for i, j in enumerate(tasks):
-    file.write("\"{}\",\"{}\","
-               "\"{}\",\"{}\"\n".format(user["id"],
-                                        user["username"],
-                                        j["completed"],
-                                        j["title"]))
+        print("\"{}\",\"{}\","
+              "\"{}\",\"{}\"\n".format(user["id"],
+                                       user["username"],
+                                       j["completed"],
+                                       j["title"]))
     file.close()
