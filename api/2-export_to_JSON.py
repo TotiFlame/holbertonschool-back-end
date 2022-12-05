@@ -21,17 +21,18 @@ if __name__ == "__main__":
     response = request_url.read()
     tasks = json.loads(response.decode("utf-8"))
 
-    file = open("{}.JSON".format(user["id"]), "w")
+    file = open("{}.json".format(user["id"]), "w")
 
     id = "{}".format(user["id"])
 
     userj = {id: []}
 
     for task in tasks:
-        userj[id].append({"task": task["title"],
-                          "completed": task["completed"],
-                          "username": user["username"]})
+        userj[id].append({
+            "task": task["title"],
+            "completed": task["completed"],
+            "username": user["username"]
+        })
 
     file.write(json.dumps(userj))
-
     file.close()
